@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: 15 17 23;
+  --bg-secondary: 30 33 48;
+  --bg-tertiary: 40 42 58;
+  --bg-hover: 42 45 62;
+  --text-primary: 228 228 231;
+  --text-secondary: 161 161 170;
+  --text-muted: 113 113 122;
+  --border-color: 46 48 68;
+  --accent: 59 130 246;
+  --accent-hover: 37 99 235;
+  --accent-glow: rgba(59, 130, 246, 0.3);
+}
+
+.theme-light {
+  --bg-primary: 255 255 255;
+  --bg-secondary: 248 250 252;
+  --bg-tertiary: 241 245 249;
+  --bg-hover: 226 232 240;
+  --text-primary: 30 41 59;
+  --text-secondary: 71 85 105;
+  --text-muted: 148 163 184;
+  --border-color: 226 232 240;
+  --accent: 59 130 246;
+  --accent-hover: 37 99 235;
+  --accent-glow: rgba(59, 130, 246, 0.2);
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: rgb(var(--bg-primary));
+  color: rgb(var(--text-primary));
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--text-muted));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--text-secondary));
+}
+
+.glass {
+  background: rgba(30, 33, 48, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.theme-light .glass {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.glow-border {
+  box-shadow: 0 0 0 1px var(--accent-glow), 0 0 8px var(--accent-glow);
+}
+
+.resize-handle-h {
+  cursor: col-resize;
+}
+
+.resize-handle-v {
+  cursor: row-resize;
+}
+
+.resize-handle-h:hover,
+.resize-handle-h:active {
+  background: rgb(var(--accent)) !important;
+}
+
+.resize-handle-v:hover,
+.resize-handle-v:active {
+  background: rgb(var(--accent)) !important;
+}
+
+input, textarea {
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+/* Monaco overrides for glass modals */
+.monaco-editor .find-widget {
+  border-radius: 6px !important;
+}
